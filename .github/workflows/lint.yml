@@ -1,0 +1,37 @@
+name: Lint
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: actionlint
+        uses: raven-actions/actionlint@v2
+
+      - name: yamllint
+        run: |
+          pip install --quiet yamllint
+          yamllint -c .yamllint.yml .
+
+      - name: markdownlint
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: "**/*.md"
+
+      - name: shellcheck
+        run: shellcheck scripts/*.sh
+
+      - name: Syntaxe de sync-labels.sh
+        run: bash -n scripts/sync-labels.sh
+
+      - name: Parsing de labels.yml (dry-run)
+        run: ./scripts/sync-labels.sh tozano-data-labs/exemple --dry-run

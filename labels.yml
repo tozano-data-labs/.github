@@ -1,0 +1,63 @@
+- name: feat
+  color: "0e8a16"
+  description: Nouvelle fonctionnalité
+- name: fix
+  color: "d73a4a"
+  description: Correction de bug
+- name: docs
+  color: "0075ca"
+  description: Documentation
+- name: refactor
+  color: "5319e7"
+  description: Refonte sans changement de comportement
+- name: test
+  color: "fbca04"
+  description: Tests
+- name: chore
+  color: "ededed"
+  description: Maintenance, configuration
+- name: ci
+  color: "c5def5"
+  description: Intégration continue
+- name: build
+  color: "bfdadc"
+  description: Build, Docker
+- name: revert
+  color: "e99695"
+  description: Annulation d'un changement
+- name: security
+  color: "b60205"
+  description: Sécurité
+- name: dependencies
+  color: "0366d6"
+  description: Mise à jour de dépendances
+- name: data-quality
+  color: "f9d0c4"
+  description: Anomalie ou test de qualité de données
+- name: ingestion
+  color: "1d76db"
+  description: Sources et ingestion
+- name: orchestration
+  color: "1d76db"
+  description: DAGs, planification
+- name: dbt
+  color: "ff694b"
+  description: Transformation dbt
+- name: dataviz
+  color: "7057ff"
+  description: Dashboards et visualisation
+- name: infra
+  color: "006b75"
+  description: Infrastructure, Docker, Terraform
+- name: rgpd
+  color: "d93f0b"
+  description: Données personnelles et conformité
+- name: good first issue
+  color: "7057ff"
+  description: Bon point d'entrée pour contribuer
+- name: help wanted
+  color: "008672"
+  description: Aide bienvenue
+- name: wontfix
+  color: "ffffff"
+  description: Ne sera pas traité

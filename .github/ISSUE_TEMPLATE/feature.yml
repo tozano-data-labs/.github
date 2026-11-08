@@ -1,0 +1,38 @@
+name: Fonctionnalité
+description: Proposer une nouvelle source, un pipeline, un modèle ou un dashboard
+labels: ["feat"]
+body:
+  - type: textarea
+    id: besoin
+    attributes:
+      label: Besoin
+      description: Quel problème ou quelle question métier cela résout-il ?
+    validations:
+      required: true
+  - type: textarea
+    id: proposition
+    attributes:
+      label: Proposition
+      description: Sources de données, transformations, livrables attendus.
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Périmètre
+      multiple: true
+      options:
+        - ingestion
+        - orchestration
+        - dbt
+        - quality
+        - dataviz
+        - infra
+        - docs
+  - type: textarea
+    id: criteres
+    attributes:
+      label: Critères d'acceptation
+      placeholder: |
+        - [ ] Tests ajoutés
+        - [ ] Documentation à jour

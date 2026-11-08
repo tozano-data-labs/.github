@@ -1,0 +1,42 @@
+name: Qualité de données
+description: Signaler une anomalie dans les données (doublons, valeurs nulles, retard, écart de volume…)
+labels: ["data-quality"]
+body:
+  - type: input
+    id: dataset
+    attributes:
+      label: Table ou jeu de données concerné
+      placeholder: marts.fct_air_quality
+    validations:
+      required: true
+  - type: dropdown
+    id: dimension
+    attributes:
+      label: Dimension de qualité
+      options:
+        - Complétude (valeurs nulles)
+        - Unicité (doublons)
+        - Fraîcheur (retard de chargement)
+        - Validité (format, plage de valeurs)
+        - Cohérence (écart entre tables)
+        - Volume (écart anormal)
+    validations:
+      required: true
+  - type: textarea
+    id: constat
+    attributes:
+      label: Constat
+      description: Requête ou test en échec, ordre de grandeur de l'écart.
+      render: sql
+    validations:
+      required: true
+  - type: input
+    id: periode
+    attributes:
+      label: Période concernée
+      placeholder: 2026-11-01 → 2026-11-05
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Marts, dashboards ou consommateurs affectés.
